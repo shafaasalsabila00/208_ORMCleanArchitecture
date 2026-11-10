@@ -6,3 +6,5 @@ const {
     komikSchema, idSchema, validateBody, validateParams 
 } = require("../middleware/komikValidator");
 
+router.get('/komik', komikController.getAllKomik);
+router.get('/komik/:id', validateParams(idSchema), komikController.getKomikById);
